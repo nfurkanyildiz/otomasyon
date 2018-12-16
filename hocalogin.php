@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Lecturer Login System</title>
-	<link rel="stylesheet" href="css/stil.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="css/stil.css" type="text/css" media="screeUn" /> 
 	<link rel="stylesheet" href="css/login.css" type="text/css" media="screen" />
 
 
@@ -13,7 +13,7 @@
 
 <div id="girisTasiyici">
 	<div id="girisUst">
-		<h1><a href="#">Lecturer Login</a></h1>
+		<h1>Lecturer Login</h1>
 	</div>
 <div class="login">
     	<form id="girisFormu" method="post" action="hocagiris.php">

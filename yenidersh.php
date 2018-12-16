@@ -21,6 +21,7 @@ if($_GET["id"]){
 	$k=mysql_fetch_assoc(mysql_query("select * from dersler where id='".$_GET["id"]."'"));
 }
 ?>
+	<link rel="stylesheet" href="css/stil.css" type="text/css" media="screen" />
 <form method="post" enctype="multipart/form-data" name="example" action="hocagiris.php?s=newlecture">
 <table width="453" align="center"  cellpadding="3" 
       cellspacing="0" class="liste" id="tablo" 
@@ -71,7 +72,7 @@ if($_GET["id"]){
   </tr>
   <tr>
     <td colspan="2"><div align="center">
-      <input type="submit" class="buton" <?= $_GET["id"] ? 'name="update" id="update" value="update"' : 'name="add" id="add" value="Add"'?> />
+      <input type="submit" class="button-success" <?= $_GET["id"] ? 'name="update" id="update" value="update"' : 'name="add" id="add" value="Add"'?> />
       </div></td>
   </tr>
 </table></form>

@@ -388,8 +388,12 @@ margin-left: 30px;
 
   <div class="cotn_principal">
 <div class="cont_centrar">
-
+<div class="ustlogo" style="margin-top:50px;margin-bottom:-50px;">
+  <div class="logo"><img width="150" height="150" src="logo.png"></img></div>
+  <h2>Student Management System</h2>
+  </div>
   <div class="cont_login">
+
 <div class="cont_info_log_sign_up">
       <div class="col_md_login">
 <div class="cont_ba_opcitiy">
@@ -403,7 +407,7 @@ function pencereAc(adres)
 }
 function pencereAc2()
 {
-    pencereAc("http://localhost/otomasyon/ogrencilogin.php");
+    pencereAc("http://nfyldz.site/otomasyon/ogrencilogin.php");
 }
 </script>
   <button class="btn_login" onclick="pencereAc2()">LOGIN</button>
@@ -418,7 +422,7 @@ function pencereAc(adres)
 }
 function pencereAc1()
 {
-    pencereAc("http://localhost/otomasyon/hocalogin.php");
+    pencereAc("http://nfyldz.site/otomasyon/hocalogin.php");
 }
 </script>
   <h2>LECTURER</h2>

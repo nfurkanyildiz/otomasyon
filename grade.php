@@ -11,6 +11,7 @@ if($_GET["id"]){
 	$k=mysql_fetch_assoc(mysql_query("select * from ogrenci_dersler where id='".$_GET["id"]."'"));
 }
 ?>
+	<link rel="stylesheet" href="css/stil.css" type="text/css" media="screen" />
 <form method="post" enctype="multipart/form-data" name="example" action="hocagiris.php?s=grade&id=<?=$_GET["id"];?>">
 <table width="453" align="center"  cellpadding="3" 
       cellspacing="0" class="liste" id="tablo" 

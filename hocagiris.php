@@ -23,7 +23,7 @@ $hocabilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM hoca where id='$_SESSI
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-	<title>managment system</title>
+	<title>management system</title>
 	<link rel="stylesheet" href="css/stil.css" type="text/css" media="screen" />
 </head>
 <body>
@@ -34,15 +34,15 @@ $hocabilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM hoca where id='$_SESSI
 	<!-- ust -->
 	<div id="ust">
 		<div class="ortala">
-		<div id="logo">
-			<h1><a href="#">Managment system </a></h1>
+		<div style="" id="logo">
+			<h1><img width="80" height="80" src="logo.png"></img>Student Management System</h1>
 		</div>
 		
 		<!-- kulMenusu -->
 		<div id="kulMenusu">
 			<ul>
-				<li>Hi <? echo $hocabilgi["adi"]." ".$hocabilgi["soyadi"];?></li>
-				<li><a href="cikish.php">Exit</a></li>
+	<li><p class="hosgeldindayi" style="background-color:#000;">Welcome:<? echo $hocabilgi["adi"]." ".$hocabilgi["soyadi"];?></p></li>
+				<li><a href="cikiso.php"><img width="30" height="30" src="exit.png"></img></a></li>
 			</ul>
 		</div>
 		<!-- kulMenusu son -->
@@ -55,33 +55,43 @@ $hocabilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM hoca where id='$_SESSI
 	
 	
 	<!-- orta -->
-	<div id="orta" class="ortala">
-		<!--anaMenu-->
-		<div id="anaMenu">
-<div class="menu">
-				<div class="menuBasligi">New Semester</div>
-				<div class="altMenuler">
-					<ul>
-						<li><a href="hocagiris.php?s=newlecture">Add Lecture</a></li>
-						<li><a href="hocagiris.php?s=dersedit">Edit Lecture</a></li>
-                        <li><a href="hocagiris.php?s=lecturedelete">Delete Lecture</a></li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="menu">
-				<div class="menuBasligi"><a href="#">Lectures</a></div>
-				<div class="altMenuler">
-					<ul>
-						<li><a href="hocagiris.php?s=entergrade">Enter the notes</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--anaMenu son -->
+	  <div style="width:150px;float:right;margin-left:20px;" class="list-group">
+
+    <a href="#" class="list-group-item active">Total Lecture</a>
+
+    <a href="#" class="list-group-item">	<?php
+
+$query = mysql_query("SELECT COUNT(*) FROM `dersler`");
 	
-		
-		
+$say = mysql_fetch_array($query);
+	
+echo $say[0];
+?></a>
+<a href="#" class="list-group-item active">Total Student</a>
+  <a href="#" class="list-group-item"><?php
+
+$query = mysql_query("SELECT COUNT(*) FROM `ogrenci`");
+	
+$say = mysql_fetch_array($query);
+	
+echo $say[0];
+?></a>
+  </div>
+	<div id="orta" class="ortala">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<div style=""class="container">
+  <h2>Management</h2>
+  </br>
+   <a href="hocagiris.php?s=addstudent"> <button type="button" class="btn btn-primary">Add Student</button></a>
+ <a href="hocagiris.php?s=newlecture"> <button type="button" class="btn btn-primary">Add Lecture</button></a>
+ <a href="hocagiris.php?s=dersedit"> <button type="button" class="btn btn-success">Edit Lecture</button></a>
+ <a href="hocagiris.php?s=entergrade"> <button type="button" class="btn btn-info">Enter Notes</button></a>
+<a href="hocagiris.php?s=yeniduyuru"> <button type="button" class="btn btn-default">New Announcement</button></a>
+ <a href="hocagiris.php?s=lecturedelete"><button type="button" class="btn btn-danger">Delete Lecture</button></a>
+</div>
+
 		<!--sayfaIcerigi-->
 		<div id="sayfaIcerigi">
 		<div class="temizle"></div> 
@@ -89,6 +99,8 @@ $hocabilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM hoca where id='$_SESSI
             <?php
 			if($_GET["s"]=="newlecture"){
 				include("yenidersh.php");
+			}else if($_GET["s"]=="yeniduyuru"){
+				include("yeniduyuru.php");
 			}else if($_GET["s"]=="lecturedelete"){
 				include("derssil.php");
 			}else if($_GET["s"]=="dersedit"){
@@ -99,18 +111,19 @@ $hocabilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM hoca where id='$_SESSI
 				include("studentlist.php");
 			}else if($_GET["s"]=="grade"){
 				include("grade.php");
+			}else if($_GET["s"]=="addstudent"){
+				include("ogrencikaydet.php");
 			}else{
 					?>
-      <div class="sayfaAciklamasi">
-				<h3 class="genelBaslik">welcome</h3>
-				<p>Congratulations on the new semester..</p>
-			</div>
+
             <?
 			}
 			?>
 
 		</div>
-		<!--sayfaIcerigi son -->
+
+
+
 		
 		<div class="temizle"></div> <!-- sayfaIcerigi, anaMenu icin temizleme -->
 		
@@ -119,7 +132,7 @@ $hocabilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM hoca where id='$_SESSI
 	
 	<!-- alt -->
 	<div id="alt">
-		<p class="ortala">Necdet Furkan Yildiz &copy; 2018 | Student Registration System </p>
+		<p class="ortala">Necdet Furkan Yildiz &copy; 2018 | Student Management System </p>
   </div>
 	<!-- alt son -->
 	

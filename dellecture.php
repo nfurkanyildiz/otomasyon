@@ -20,7 +20,7 @@ while($alecture = mysql_fetch_array($asklecture)) {
 <td><?=$listele["kodu"];?></td>
     <td><?=$listele["isim"];?></td>
     <td><?=$listele["kredi"];?></td>
-    <td><a href="ogrencigiris.php?s=dellecture&del=<?=$alecture["id"];?>">Delete</a></td>
+    <td><a href="ogrencigiris.php?s=dellecture&del=<?=$alecture["id"];?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
 </tr>
 <?
 }

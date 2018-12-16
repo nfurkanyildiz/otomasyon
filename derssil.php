@@ -24,7 +24,7 @@ while ($listele = mysql_fetch_array($sor)) {
     <td><?=$listele["kredi"];?></td>
     <td><?=$listele["vize_yuz"];?></td>
     <td><?=$listele["final_yuz"];?></td>
-    <td><a href="hocagiris.php?s=lecturedelete&del=<?=$listele["id"];?>">Delete</a></td>
+    <td><a href="hocagiris.php?s=lecturedelete&del=<?=$listele["id"];?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
 </tr>
 <?
 }

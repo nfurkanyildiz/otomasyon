@@ -23,7 +23,7 @@ $obilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM ogrenci where id='$_SESSI
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-	<title>student managment system</title>
+	<title>student management system</title>
 	<link rel="stylesheet" href="css/stil.css" type="text/css" media="screen" />
 </head>
 <body>
@@ -32,17 +32,18 @@ $obilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM ogrenci where id='$_SESSI
 <div id="anaKapsayici">
 
 	<!-- ust -->
-	<div id="ust">
+<div id="ust">
 		<div class="ortala">
-		<div id="logo">
-			<h1><a href="#">managment system</a></h1>
+		<div style="" id="logo">
+			<h1><img width="80" height="80" src="logo.png"></img>Student Management System</h1>
 		</div>
 		
 		<!-- kulMenusu -->
 		<div id="kulMenusu">
 			<ul>
-				<li>hi <? echo $obilgi["isim"]." ".$obilgi["soyad"];?></li>
-				<li><a href="cikiso.php">exit</a></li>
+		
+				<li><p class="hosgeldindayi" style="background-color:#000;">Welcome; <? echo $obilgi["isim"]." ".$obilgi["soyad"];?></p></li>
+				<li><a href="cikiso.php"><img width="30" height="30" src="exit.png"></img></a></li>
 			</ul>
 		</div>
 		<!-- kulMenusu son -->
@@ -56,31 +57,34 @@ $obilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM ogrenci where id='$_SESSI
 	
 	<!-- orta -->
 	<div id="orta" class="ortala">
-		<!--anaMenu-->
-		<div id="anaMenu">
-<div class="menu">
-				<div class="menuBasligi">new semester</div>
-				<div class="altMenuler">
-					<ul>
-						<li><a href="ogrencigiris.php?s=addlecture">choose a lecture</a></li>
-						<li><a href="ogrencigiris.php?s=dellecture">remove lecture</a></li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="menu">
-				<div class="menuBasligi"><a href="#">lectures</a></div>
-				<div class="altMenuler">
-					<ul>
-						<li><a href="ogrencigiris.php?s=studentgrade">see notes</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--anaMenu son -->
 	
-		
-		
+	<!-- new menu -->
+	<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<div style=""class="container">
+  <h2>Management</h2>
+  </br>
+ <a href="ogrencigiris.php?s=addlecture"> <button type="button" class="btn btn-primary">Choose Lecture</button></a>
+ <a href="ogrencigiris.php?s=studentgrade"> <button type="button" class="btn btn-info">See Notes</button></a>
+ <a href="ogrencigiris.php?s=dellecture"><button type="button" class="btn btn-danger">Delete Lecture</button></a>
+  <a href="ogrencigiris.php?s=duyurulist"><button type="button" class="btn btn-danger">Announcement</button></a>
+</div>
+
+
+<!-- left menu 
+<div id="mySidenav" class="sidenav">
+ <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ <a href="ogrencigiris.php">homepage</a>
+<a href="ogrencigiris.php?s=addlecture">choose a lecture</a>
+<a href="ogrencigiris.php?s=dellecture">remove lecture</a>
+<a href="ogrencigiris.php?s=studentgrade">see notes</a>
+</div> -->
+
+
 		<!--sayfaIcerigi-->
 		<div id="sayfaIcerigi">
 		
@@ -89,6 +93,9 @@ $obilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM ogrenci where id='$_SESSI
             <?
 			if($_GET["s"]=="addlecture"){
 				include("addlecture.php");
+			}
+			else if($_GET["s"]=="duyurulist"){
+				include("list.php");
 			}else if($_GET["s"]=="dellecture"){
 				include("dellecture.php");
 			}else if($_GET["s"]=="dersedit"){
@@ -96,11 +103,10 @@ $obilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM ogrenci where id='$_SESSI
 			}else if($_GET["s"]=="studentgrade"){
 				include("studentgrade.php");
 			}else{
+				
+				
+				
 					?>
-      <div class="sayfaAciklamasi">
-				<h3 class="genelBaslik">welcome</h3>
-				<p>Congratulations on the new semester...</p>
-			</div>
             <?
 			}
 			?>
@@ -114,7 +120,7 @@ $obilgi = mysql_fetch_assoc(mysql_query("SELECT * FROM ogrenci where id='$_SESSI
 	
 	<!-- alt -->
 	<div id="alt">
-		<p class="ortala">Necdet Furkan Yildiz &copy; 2018 | Student Registration System </p>
+		<p class="ortala">Necdet Furkan Yildiz &copy; 2018 | Student Management System </p>
 </div>
 	<!-- alt son -->
 	

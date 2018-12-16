@@ -11,17 +11,18 @@
 			if($slecture>$snowlecture){
 				
 				mysql_query("insert into ogrenci_dersler values (NULL,'".$lecture."','".$_SESSION["ogrenci_idd"]."',0,0)")or die(mysql_error());
-				echo "Lecture Added...";
+				echo '<div class="alert alert-success">Lecture Added...</div>';
 				
 			}else{
-				echo "Credit is Full";
+				echo '<div class="alert alert-danger">Credit is Full</div>';
 			}	
 				}else{
-				echo "You Can Not Take Same Lecture Again";	
+				echo '<div class="alert alert-danger">You Can Not Take Same Lecture Again</div>';	
 				}		
 		}
 	/* -------------------------------------------  */
 ?>
+	<link rel="stylesheet" href="css/stil.css" type="text/css" media="screen" />
 <form method="post" enctype="multipart/form-data" name="example" action="ogrencigiris.php?s=addlecture">
 <table width="453" align="center"  cellpadding="3" 
       cellspacing="0" class="liste" id="tablo" 
@@ -35,12 +36,12 @@
   <tr>
     <td width="125" height="30">Add Lecture : </td>
     <td width="289">
-      <select name="lecture">
+      <select style="background-color:#333;" name="lecture">
 <?php
 $sor = mysql_query("select * from dersler");
 while ($listele = mysql_fetch_array($sor)) {
 ?>
-      <option value="<?=$listele["id"];?>"><?=$listele["kodu"]." - ".$listele["isim"];?></option>
+      <option style="background-color:#333;" value="<?=$listele["id"];?>"><?=$listele["kodu"]." - ".$listele["isim"];?></option>
       
 <?
 }
@@ -50,7 +51,7 @@ while ($listele = mysql_fetch_array($sor)) {
    
   <tr>
     <td colspan="2"><div align="center">
-      <input type="submit" class="buton" name="add" id="add" value="Add"/>
+      <input type="submit" class="button-success" name="add" id="add" value="Add"/>
       </div></td>
   </tr>
 </table></form>

@@ -26,24 +26,26 @@ while($alecture = mysql_fetch_array($asklecture)) {
     <td><?
     if($answer>=95 && $answer<=100) {
     echo $answer." => AA";
-    } elseif($answer>=90 && $answer<=94) {
+    } elseif($answer>=90 && $answer<=95) {
     echo $answer." => BA";
-    } elseif($answer>=85 && $answer<=89) {
+    } elseif($answer>=85 && $answer<=90) {
     echo $answer." => BB";
-    } elseif($answer>=80 && $answer<=84) {
+    } elseif($answer>=80 && $answer<=85) {
     echo $answer." => CB";
-    } elseif($answer>=75 && $answer<=79) {
+    } elseif($answer>=75 && $answer<=80) {
     echo $answer." => CB";
-    } elseif($answer>=70 && $answer<=74) {
+    } elseif($answer>=70 && $answer<=75) {
     echo $answer." => CC";
-    } elseif($answer>=65 && $answer<=69) {
+    } elseif($answer>=65 && $answer<=70) {
     echo $answer." => CC";
-    } elseif($answer>=60 && $answer<=64) {
+    } elseif($answer>=60 && $answer<=65) {
     echo $answer." => CC";
-    } elseif($answer>=55 && $answer<=59) {
+    } elseif($answer>=55 && $answer<=60) {
     echo $answer." => DC";
-    }elseif($answer>=50 && $answer<=54) {
+    }elseif($answer>=50 && $answer<=55) {
     echo $answer." => DD";
+	}elseif($answer<=0) {
+    echo $answer." => Not Value";
     }else{
     echo $answer." => FF";
     }
