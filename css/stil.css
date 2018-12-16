@@ -11,22 +11,27 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	margin: 0;
 	padding: 0;
 	border: 0;
+	
  }
- 
+ *
+ {
+	 
+	 color:#fff;
+ }
 body {
-	background: #e8f9ff;
-	color: #333;
+	background: #3d6384;
+	color: #fff;
 	font: normal normal normal 11px/16px Tahoma, Arial, sans-serif;
-}
+} 
 
 a {
-	color: #3181d3;
+	color: #fff;
 	text-decoration: none; 
 }
 
 a:hover { color: #1a61aa; }
 
-input, textarea { font: 11px Tahoma, Arial, sans-serif; }
+input, textarea { font: 11px Tahoma, Arial, sans-serif;background-color:black; }
 
 ol, ul { list-style: none; }
 
@@ -51,11 +56,11 @@ table th, table td {
 	padding: 6px 10px;
 }
 
-tbody { background: #e0f6fd; }
+tbody { background: #fff; }
 
 tbody td { border-top: 1px solid #39839a; }
 
-tbody tr { background-color: #d4eff7; }
+tbody tr { background-color: #092644; }
 
 thead {
 	background: #39839a url("../imajlar/tabloUst.jpg") repeat-x top;
@@ -201,13 +206,13 @@ thead {
 
 .onayKutusu .mesajBasligi { color: #339933; }
 
-.ortala { width: 900px; margin: 0 auto; }
+.ortala { width: 1200px; margin: 0 auto; }
 
 .sagKaydir { float: right; }
 
 .sayfaAciklamasi {
-	background-color: #ceebf4;
-	color: #4f7a87;
+	background-color: #092644;
+	color: #fff;
 	border-bottom: 1px solid #a5ceda;
 	padding: 8px;
 	margin-bottom: 15px;
@@ -233,8 +238,8 @@ thead {
 .uyariKutusu .mesajBasligi { color: #996600; }
 
 #alt {
-	background-color: #3a839a;
-	color: #e8f9ff;
+	background-color: #092644;
+	color: #fff;
 	border-top: 5px solid #cde5ed;
 	padding: 20px 0;
 }
@@ -245,9 +250,9 @@ thead {
 #anaTasiyici { padding: 0; margin: 0; }
 
 /* kulMenusu*/
-#kulMenusu { float: right; color: #fff; padding: 8px 0; width: auto; }
+#kulMenusu { float: right; color: #092644; padding: 8px 0; width: auto; }
 
-#kulMenusu a { color: #ccc; font-weight: bold; }
+#kulMenusu a { color: #092644; font-weight: bold; }
 
 #kulMenusu a:hover { color: #fff; }
 
@@ -255,14 +260,40 @@ thead {
 
 #logo { padding: 30px 0; float: left; }
 
-#logo h1, #logo h1 a { font-weight: normal; font-size: 22px; color: #b3cfd8; }
+#logo h1, #logo h1 a { font-weight: normal; font-size: 22px; color: #fff; }
 
 /* kulMenusu sonu */
 		
-	#orta { margin: 20px auto; min-height: 400px; }
+	#orta { margin: 0 30px auto; min-height: 400px; }
 
-#sayfaIcerigi { float: right; width: 77%; }
+#sayfaIcerigi { float: center; width: 55%; }
 
 #ust {
-	background: #3a839a url("../imajlar/ustArka.jpg") no-repeat center top;
+	background: #092644  no-repeat center top;
 }
+/*butonlar*/
+        .button-success,
+        .button-error,
+        .button-warning,
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-success {
+            background: rgb(28, 184, 65); /* this is a green */
+			padding:3px 3px 3px 3px;
+        }
+
+        .button-error {
+            background: rgb(202, 60, 60); /* this is a maroon */
+        }
+
+        .button-warning {
+            background: rgb(223, 117, 20); /* this is an orange */
+        }
+
+        .button-secondary {
+            background: rgb(66, 184, 221); /* this is a light blue */
+        }
