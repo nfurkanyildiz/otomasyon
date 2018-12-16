@@ -6,8 +6,8 @@ start date : 12.12.2018
 
 
 <?php
-$link = mysql_connect("localhost", "nfyldz_oto", "asdzxc123+") or die(mysql_error());
-$db = mysql_select_db("nfyldz_oto", $link) or die (mysql_error());
+$link = mysql_connect("localhost", "#####", "#####") or die(mysql_error());
+$db = mysql_select_db("######", $link) or die (mysql_error());
 mysql_set_charset('latin5',$link);
 ?>
 <!--- bootstrap css & js include ediyorum --->
