@@ -1,19 +1,5 @@
 <?php
- $servername = "localhost";
-
-$username = "nfyldz_oto";
-
-$password = "asdzxc123+";
-
-$dbname = "nfyldz_oto";
-
-
-
-// Create connection
-
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-// bağlantıyı test et
 
 if ($conn->connect_error) {
 
